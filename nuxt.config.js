@@ -23,6 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
+    'reset-css',
+    '~/assets/scss/style.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -58,5 +60,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  generate: {
+	  fallback: true
   }
 }
