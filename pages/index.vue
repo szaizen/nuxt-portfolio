@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        my-portfolio
+        saki
       </h1>
       <h2 class="subtitle">
         My awesome Nuxt.js project
