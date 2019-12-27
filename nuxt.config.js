@@ -42,13 +42,12 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+  styleResources: {
+    scss: ['~/assets/scss/_variables.scss']
+  },
   axios: {
   },
   /*
