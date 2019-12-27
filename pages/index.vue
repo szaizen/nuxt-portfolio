@@ -1,13 +1,13 @@
 <template>
   <div class="page-index">
-    <section class="about">
+    <section class="photo">
       <h2 class="section-title">
         My photo
       </h2>
-      <Swiper></Swiper>
+      <Swiper />
     </section>
 
-    <section class="works">
+    <section class="about">
       <h2 class="section-title">
         プロフィール
       </h2>
@@ -21,15 +21,33 @@
         </ul>
       </ArticleBody>
     </section>
+    <section class="work">
+      <h2 class="section-title">
+        開発実績
+      </h2>
+      <div id="app">
+        <button @click="showModal = true">
+          コーポレートサイト
+        </button>
+        <modal v-if="showModal" @close="showModal = false" />
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import ArticleBody from '~/components/common/ArticleBody'
 import Swiper from '~/components/common/Swiper'
+import Modal from '~/components/common/Modal'
 export default {
+  name: 'App',
   components: {
-    ArticleBody, Swiper
+    ArticleBody, Swiper, Modal
+  },
+  data () {
+    return {
+      showModal: false
+    }
   }
 }
 </script>

@@ -5,9 +5,9 @@
       <swiper-slide><img src="~/assets/images/slide2.jpg" alt=""></swiper-slide>
       <swiper-slide><img src="~/assets/images/slide3.jpg" alt=""></swiper-slide>
       <swiper-slide><img src="~/assets/images/slide4.jpg" alt=""></swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
+      <div slot="pagination" class="swiper-pagination" />
+      <div slot="button-prev" class="swiper-button-prev" />
+      <div slot="button-next" class="swiper-button-next" />
     </swiper>
   </div>
 </template>
