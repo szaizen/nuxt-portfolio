@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer">© my-portfolio.</footer>
+  <footer class="footer">
+    © my-portfolio.
+  </footer>
 </template>
 
 <style scoped lang="scss">
