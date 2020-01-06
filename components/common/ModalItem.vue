@@ -3,7 +3,7 @@
     <div @click="$emit('close')" class="overlay">
       <div @click.stop class="panel">
         <slot />
-        <button class="panel__button" @click="$emit('close')">
+        <button @click="$emit('close')" class="panel__button">
           閉じる
         </button>
       </div>
