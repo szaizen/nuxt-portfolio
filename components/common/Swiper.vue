@@ -1,7 +1,9 @@
 <template>
   <div class="slider">
     <swiper :options="swiperOption">
-      <slot />
+      <swiper-slide v-for="(entryVal, entryKey) in swiperData" :key="entryKey">
+        <img :src="entryVal.src" :alt="entryVal.alt">
+      </swiper-slide>
       <div slot="pagination" class="swiper-pagination" />
       <div slot="button-prev" class="swiper-button-prev" />
       <div slot="button-next" class="swiper-button-next" />
@@ -11,24 +13,18 @@
 
 <script>
 export default {
-  data () {
-    return {
-      swiperOption: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        updateOnImagesReady: true,
-        keyboard: {
-          enabled: true
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      }
+  props: {
+    data: Array,
+    option: Object
+  },
+  computed: {
+    swiperData () {
+      const data = this.data
+      return data
+    },
+    swiperOption () {
+      const option = this.option
+      return option
     }
   }
 }
