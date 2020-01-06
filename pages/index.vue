@@ -4,7 +4,7 @@
       <h2 class="section-title">
         My photo
       </h2>
-      <Swiper :option="swiperOption" :data="swiperImage" />
+      <SliderItem :option="swiperOption" :data="swiperImage" />
     </section>
 
     <section class="about">
@@ -27,12 +27,14 @@
       </h2>
       <div id="app">
         <button @click="showModal = true">
-        コーポレートサイト
+          コーポレートサイト
         </button>
-        <modal v-if="showModal" @close="showModal = false">
-          <h3 class="panel__title">制作実績</h3>
+        <ModalItem v-if="showModal" @close="showModal = false">
+          <h3 class="panel__title">
+            制作実績
+          </h3>
           <img class="panel__image" src="~/assets/images/work1.png" alt="">
-        </modal>
+        </ModalItem>
       </div>
     </section>
   </div>
@@ -40,12 +42,12 @@
 
 <script>
 import ArticleBody from '~/components/common/ArticleBody'
-import Swiper from '~/components/common/Swiper'
-import Modal from '~/components/common/Modal'
+import SliderItem from '~/components/common/SliderItem'
+import ModalItem from '~/components/common/ModalItem'
 export default {
   name: 'App',
   components: {
-    ArticleBody, Swiper, Modal
+    ArticleBody, SliderItem, ModalItem
   },
   data () {
     return {
