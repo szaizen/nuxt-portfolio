@@ -2,8 +2,7 @@
   <transition name="modal">
     <div @click="$emit('close')" class="overlay">
       <div @click.stop class="panel">
-        <h3 class="panel__title">制作実績</h3>
-        <img class="panel__image" src="~/assets/images/work1.png" alt="">
+        <slot />
         <button class="panel__button" @click="$emit('close')">
           閉じる
         </button>

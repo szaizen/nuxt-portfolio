@@ -4,7 +4,12 @@
       <h2 class="section-title">
         My photo
       </h2>
-      <Swiper />
+      <Swiper>
+        <swiper-slide><img src="~/assets/images/slide1.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="~/assets/images/slide2.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="~/assets/images/slide3.jpg" alt=""></swiper-slide>
+        <swiper-slide><img src="~/assets/images/slide4.jpg" alt=""></swiper-slide>
+      </Swiper>
     </section>
 
     <section class="about">
@@ -27,9 +32,12 @@
       </h2>
       <div id="app">
         <button @click="showModal = true">
-          コーポレートサイト
+        コーポレートサイト
         </button>
-        <modal v-if="showModal" @close="showModal = false" />
+        <modal v-if="showModal" @close="showModal = false">
+          <h3 class="panel__title">制作実績</h3>
+          <img class="panel__image" src="~/assets/images/work1.png" alt="">
+        </modal>
       </div>
     </section>
   </div>

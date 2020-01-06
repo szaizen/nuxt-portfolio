@@ -1,10 +1,7 @@
 <template>
   <div class="slider">
     <swiper :options="swiperOption">
-      <swiper-slide><img src="~/assets/images/slide1.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="~/assets/images/slide2.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="~/assets/images/slide3.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="~/assets/images/slide4.jpg" alt=""></swiper-slide>
+      <slot />
       <div slot="pagination" class="swiper-pagination" />
       <div slot="button-prev" class="swiper-button-prev" />
       <div slot="button-next" class="swiper-button-next" />
@@ -37,7 +34,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .swiper-slide img {
   height: auto;
   width: 100%;
