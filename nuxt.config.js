@@ -57,8 +57,7 @@ export default {
   */
   build: {
     vendor: [
-      'vue-awesome-swiper',
-      'vue-scrollto'
+      'vue-awesome-swiper'
     ],
     /*
     ** You can extend webpack config here
