@@ -4,7 +4,7 @@
       <h2 class="section-title">
         My photo
       </h2>
-      <SliderItem :option="swiperOption" :data="swiperImage" />
+      <SliderList :option="swiperOption" :data="swiperImage" />
     </section>
 
     <section class="about">
@@ -42,12 +42,12 @@
 
 <script>
 import ArticleBody from '~/components/common/ArticleBody'
-import SliderItem from '~/components/common/SliderItem'
+import SliderList from '~/components/common/SliderList'
 import ModalItem from '~/components/common/ModalItem'
 export default {
   name: 'App',
   components: {
-    ArticleBody, SliderItem, ModalItem
+    ArticleBody, SliderList, ModalItem
   },
   data () {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="(value, index) in swiperData" :key="index">
+    <swiper :options="option">
+      <swiper-slide v-for="(value, index) in data" :key="index">
         <img :src="value.src" :alt="value.alt">
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination" />
@@ -21,14 +21,6 @@ export default {
     option: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    swiperData () {
-      return this.data
-    },
-    swiperOption () {
-      return this.option
     }
   }
 }

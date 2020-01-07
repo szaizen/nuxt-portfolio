@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transitionName">
+  <transition :name="showAnimation">
     <div @click="$emit('close')" class="overlay">
       <div @click.stop class="panel">
         <slot />
@@ -17,11 +17,6 @@ export default {
     showAnimation: {
       type: String,
       default: 'fade'
-    }
-  },
-  computed: {
-    transitionName () {
-      return this.showAnimation
     }
   }
 }
