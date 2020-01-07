@@ -1,9 +1,6 @@
 
 export default {
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -15,34 +12,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
   css: [
     'reset-css',
     'swiper/dist/css/swiper.css',
     '~/assets/scss/style.scss'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false }
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/style-resources'
@@ -51,20 +33,6 @@ export default {
     scss: ['~/assets/scss/_variables.scss']
   },
   axios: {
-  },
-  /*
-  ** Build configuration
-  */
-  build: {
-    vendor: [
-      'vue-awesome-swiper',
-      'vue-scrollto'
-    ],
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
   },
   generate: {
 	  fallback: true

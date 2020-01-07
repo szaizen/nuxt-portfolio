@@ -1,16 +1,26 @@
 <template>
-  <transition name="modal">
+  <transition :name="showAnimation">
     <div @click="$emit('close')" class="overlay">
       <div @click.stop class="panel">
-        <h3 class="panel__title">制作実績</h3>
-        <img class="panel__image" src="~/assets/images/work1.png" alt="">
-        <button class="panel__button" @click="$emit('close')">
+        <slot />
+        <button @click="$emit('close')" class="panel__button">
           閉じる
         </button>
       </div>
     </div>
   </transition>
 </template>
+
+<script>
+export default {
+  props: {
+    showAnimation: {
+      type: String,
+      default: 'fade'
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .overlay {
@@ -38,26 +48,14 @@
   opacity: 1;
   text-align: center;
 }
-.modal-enter,
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .panel,
-.modal-leave-active .panel{
-  opacity: 0;
-}
-
 .panel__title {
   font-size: 1.3rem;
   margin-bottom: 20px;
   font-weight: bold;
 }
-
 .panel__image {
   width: 100%;
 }
-
 .panel__button {
   width: 200px;
   padding: 10px;
@@ -65,5 +63,22 @@
   color: #fff;
   font-size: .9rem;
   margin-top: 20px;
+}
+/* 表示アニメーション */
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+.fade-enter .panel,
+.fade-leave-active .panel{
+    opacity: 1;
+}
+.fade-down-enter,
+.fade-down-leave-active {
+    opacity: 0;
+}
+.fade-down-enter .panel,
+.fade-down-leave-active .panel{
+    top: -200px;
 }
 </style>

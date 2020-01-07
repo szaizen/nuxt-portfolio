@@ -4,7 +4,7 @@
       <h2 class="section-title">
         My photo
       </h2>
-      <Swiper />
+      <SliderList :option="swiperOption" :data="swiperImage" />
     </section>
 
     <section class="about">
@@ -29,7 +29,12 @@
         <button @click="showModal = true">
           コーポレートサイト
         </button>
-        <modal v-if="showModal" @close="showModal = false" />
+        <ModalItem v-show="showModal" @close="showModal = false" :showAnimation="showAnimation">
+          <h3 class="panel__title">
+            制作実績
+          </h3>
+          <img class="panel__image" src="~/assets/images/work1.png" alt="">
+        </ModalItem>
       </div>
     </section>
   </div>
@@ -37,16 +42,43 @@
 
 <script>
 import ArticleBody from '~/components/common/ArticleBody'
-import Swiper from '~/components/common/Swiper'
-import Modal from '~/components/common/Modal'
+import SliderList from '~/components/common/SliderList'
+import ModalItem from '~/components/common/ModalItem'
 export default {
   name: 'App',
   components: {
-    ArticleBody, Swiper, Modal
+    ArticleBody, SliderList, ModalItem
   },
   data () {
     return {
-      showModal: false
+      showModal: false,
+      /*
+      *   fade : ゆっくり表示
+      *   fade-down : 上からゆっくり表示
+      */
+      showAnimation: 'fade-down',
+      swiperImage: [
+        { src: '_nuxt/assets/images/slide1.jpg', alt: '画像1' },
+        { src: '_nuxt/assets/images/slide2.jpg', alt: '画像2' },
+        { src: '_nuxt/assets/images/slide3.jpg', alt: '画像3' },
+        { src: '_nuxt/assets/images/slide4.jpg', alt: '画像4' }
+      ],
+      swiperOption: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        updateOnImagesReady: true,
+        keyboard: {
+          enabled: true
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   }
 }
