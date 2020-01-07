@@ -29,7 +29,7 @@
         <button @click="showModal = true">
           コーポレートサイト
         </button>
-        <ModalItem v-if="showModal" @close="showModal = false">
+        <ModalItem v-show="showModal" @close="showModal = false" :showAnimation="showAnimation">
           <h3 class="panel__title">
             制作実績
           </h3>
@@ -52,6 +52,11 @@ export default {
   data () {
     return {
       showModal: false,
+      /*
+      *   fade : ゆっくり表示
+      *   fade-down : 上からゆっくり表示
+      */
+      showAnimation: 'fade-down',
       swiperImage: [
         { src: '_nuxt/assets/images/slide1.jpg', alt: '画像1' },
         { src: '_nuxt/assets/images/slide2.jpg', alt: '画像2' },
