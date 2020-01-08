@@ -25,7 +25,7 @@
       <h2 class="section-title">
         開発実績
       </h2>
-      <div id="app">
+      <div>
         <button @click="showModal = true">
           コーポレートサイト
         </button>
@@ -37,6 +37,12 @@
         </ModalItem>
       </div>
     </section>
+    <section class="contact">
+      <h2 class="section-title">
+        お問い合わせ
+      </h2>
+      <contactForm />
+    </section>
   </div>
 </template>
 
@@ -44,10 +50,10 @@
 import ArticleBody from '~/components/common/ArticleBody'
 import SliderList from '~/components/common/SliderList'
 import ModalItem from '~/components/common/ModalItem'
+import contactForm from '~/components/common/contactForm'
 export default {
-  name: 'App',
   components: {
-    ArticleBody, SliderList, ModalItem
+    ArticleBody, SliderList, ModalItem, contactForm
   },
   data () {
     return {
