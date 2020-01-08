@@ -44,8 +44,8 @@ export default {
   methods: {
     contactFormSubmit () {
       console.log('名前：' + this.contactData.name)
-      console.log('名前：' + this.contactData.title)
-      console.log('名前：' + this.contactData.inquiry)
+      console.log('タイトル：' + this.contactData.title)
+      console.log('問い合わせ内容：' + this.contactData.inquiry)
     }
   }
 }
