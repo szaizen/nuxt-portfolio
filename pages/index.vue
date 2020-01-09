@@ -51,6 +51,12 @@ import ArticleBody from '~/components/common/ArticleBody'
 import SliderList from '~/components/common/SliderList'
 import ModalItem from '~/components/common/ModalItem'
 import contactForm from '~/components/common/contactForm'
+
+import slideImage1 from '~/assets/images/slide1.jpg'
+import slideImage2 from '~/assets/images/slide2.jpg'
+import slideImage3 from '~/assets/images/slide3.jpg'
+import slideImage4 from '~/assets/images/slide4.jpg'
+
 export default {
   components: {
     ArticleBody, SliderList, ModalItem, contactForm
@@ -64,10 +70,10 @@ export default {
       */
       showAnimation: 'fade-down',
       swiperImage: [
-        { src: '_nuxt/assets/images/slide1.jpg', alt: '画像1' },
-        { src: '_nuxt/assets/images/slide2.jpg', alt: '画像2' },
-        { src: '_nuxt/assets/images/slide3.jpg', alt: '画像3' },
-        { src: '_nuxt/assets/images/slide4.jpg', alt: '画像4' }
+        { src: slideImage1, alt: '画像1' },
+        { src: slideImage2, alt: '画像2' },
+        { src: slideImage3, alt: '画像3' },
+        { src: slideImage4, alt: '画像4' }
       ],
       swiperOption: {
         slidesPerView: 1,
