@@ -1,17 +1,29 @@
 <template>
   <div>
-    <h2 class="section-title">
-      {{ qiitaItems.title }}
-    </h2>
-    <article>
-      <div class="head">
-        <a :href="qiitaItems.url" target="_blank">Qiitaのページに飛ぶ</a>
-        <div>いいねの数：{{ qiitaItems.likes_count }}</div>
-        <div>タグ：<span v-for="(value,index) in qiitaItems.tags" :key="index">{{ value.name }}</span></div>
-        <div>投稿日：{{ qiitaItems.created_at }}</div>
-      </div>
-      <div v-html="qiitaItems.rendered_body"></div>
-    </article>
+    <div v-if="statusCode">
+      <p>
+        エラーが発生しました。<br>
+        恐れ入りますが、時間をおいてアクセスして下さい。
+      </p>
+      <p>
+        エラーメッセージ<br>
+        {{ message }}
+      </p>
+    </div>
+    <div v-else>
+      <h2 class="section-title">
+        {{ qiitaItem.title }}
+      </h2>
+      <article>
+        <div class="head">
+          <a :href="qiitaItem.url" target="_blank">Qiitaのページに飛ぶ</a>
+          <div>いいねの数：{{ qiitaItem.likes_count }}</div>
+          <div>タグ：<span v-for="(value,index) in qiitaItem.tags" :key="index">{{ value.name }}</span></div>
+          <div>投稿日：{{ qiitaItem.created_at }}</div>
+        </div>
+        <div v-html="qiitaItem.rendered_body" />
+      </article>
+    </div>
   </div>
 </template>
 
@@ -22,14 +34,21 @@ const API_PATH_BASE = 'https://qiita.com/api/v2/items/'
 export default {
   data () {
     return {
-      id: '',
-      qiitaItems: ''
+      qiitaItem: '',
+      statusCode: '',
+      message: ''
     }
   },
   async asyncData ({ params }) {
-    const { data } = await axios.get(API_PATH_BASE + params.id)
-    console.log(data)
-    return { qiitaItems: data }
+    try {
+      const { data } = await axios.get(API_PATH_BASE + params.id)
+      return { qiitaItem: data }
+    } catch (err) {
+      return {
+        statusCode: err.response.status,
+        message: err.response.data.message
+      }
+    }
   }
 }
 </script>
