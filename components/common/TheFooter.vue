@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    © my-portfolio.<font-awesome-icon icon="coffee" />
+    © my-portfolio.<font-awesome-icon style="width: 1.25em;" icon="coffee" />
   </footer>
 </template>
 

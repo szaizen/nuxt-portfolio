@@ -1,8 +1,19 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <h1>my-portfolio</h1>
-      自己紹介
+      <h1>
+        <nuxt-link to="/">
+          my-portfolio
+        </nuxt-link>
+      </h1>
+      <div>
+        <nuxt-link to="/qiita">
+          Qiita
+        </nuxt-link>
+        <nuxt-link to="/about">
+          自己紹介
+        </nuxt-link>
+      </div>
     </div>
   </header>
 </template>
