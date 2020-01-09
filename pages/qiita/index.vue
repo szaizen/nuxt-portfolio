@@ -4,10 +4,10 @@
       Qiita投稿一覧
     </h2>
     <ul class="article__list">
-      <li class="article__item" v-for="(item, index) in qiitaItems" :key="index">
-        <a :href="item.url" target="_blank">
+      <li v-for="(item, index) in qiitaItems" :key="index" class="article__item">
+        <nuxt-link :to="'/qiita/' + item.id">
           {{ item.title }}
-        </a>
+        </nuxt-link>
       </li>
     </ul>
   </div>
