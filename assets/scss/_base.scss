@@ -3,4 +3,13 @@ body {
   background-color: $color-lightgray;
   font-size: 14px;
   letter-spacing: 0.05em;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+// ページ遷移時
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
 }
