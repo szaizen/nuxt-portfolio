@@ -2,7 +2,7 @@
   <div class="slider">
     <swiper :options="option">
       <swiper-slide v-for="(value, index) in data" :key="index">
-        <img :src="value.src" :alt="value.alt">
+        <img :src="value.src" :alt="value.alt" style="width: 100%;">
       </swiper-slide>
       <div slot="pagination" class="swiper-pagination" />
       <div slot="button-prev" class="swiper-button-prev" />
