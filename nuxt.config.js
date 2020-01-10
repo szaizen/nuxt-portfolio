@@ -1,6 +1,6 @@
 
 require('dotenv').config()
-const { API_PATH_QIITA } = process.env
+const { API_PATH_QIITA,GAID } = process.env
 
 export default {
   mode: 'universal',
@@ -31,7 +31,14 @@ export default {
   ],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/google-gtag',
+      {
+        id: GAID,
+        debug: true
+      }
+    ]
   ],
   styleResources: {
     scss: ['~/assets/scss/_variables.scss']
