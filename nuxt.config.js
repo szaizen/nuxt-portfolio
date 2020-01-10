@@ -1,8 +1,11 @@
 
+require('dotenv').config()
+const { API_PATH_QIITA } = process.env
+
 export default {
   mode: 'universal',
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s | ポートフォリオサイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -37,5 +40,8 @@ export default {
   },
   generate: {
 	  fallback: true
+  },
+  env: {
+    API_PATH_QIITA
   }
 }

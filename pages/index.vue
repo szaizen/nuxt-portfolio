@@ -61,6 +61,15 @@ export default {
   components: {
     ArticleBody, SliderList, ModalItem, contactForm
   },
+  head () {
+    return {
+      title: 'ポートフォリオサイト',
+      titleTemplate: '',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ポートフォリオサイトのトップページです。プロフィール、開発実績が載っております。' }
+      ]
+    }
+  },
   data () {
     return {
       showModal: false,

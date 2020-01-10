@@ -28,8 +28,18 @@
 <script>
 import axios from 'axios'
 
-const API_PATH = 'https://qiita.com/api/v2/users/szaizen/items'
+const API_PATH = process.env.API_PATH_QIITA + 'users/szaizen/items'
+console.log(API_PATH)
+
 export default {
+  head () {
+    return {
+      title: 'Qiita記事一覧',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ポートフォリオサイトのQiita記事一覧ページです。' }
+      ]
+    }
+  },
   data () {
     return {
       statusCode: ''

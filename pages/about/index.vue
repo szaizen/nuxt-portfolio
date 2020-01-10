@@ -34,6 +34,14 @@ import ArticleBody from '~/components/common/ArticleBody'
 export default {
   components: {
     ArticleBody
+  },
+  head () {
+    return {
+      title: '自己紹介',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ポートフォリオサイトの自己紹介ページです。' }
+      ]
+    }
   }
 }
 </script>

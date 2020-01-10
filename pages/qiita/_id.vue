@@ -29,9 +29,14 @@
 
 <script>
 import axios from 'axios'
-const API_PATH_BASE = 'https://qiita.com/api/v2/items/'
+const API_PATH_BASE = process.env.API_PATH_QIITA + 'items/'
 
 export default {
+  head () {
+    return {
+      title: this.qiitaItem.title
+    }
+  },
   data () {
     return {
       statusCode: ''
@@ -40,6 +45,7 @@ export default {
   async asyncData ({ params }) {
     try {
       const { data } = await axios.get(API_PATH_BASE + params.id)
+      console.log(data)
       return { qiitaItem: data }
     } catch (err) {
       return {
@@ -63,6 +69,14 @@ export default {
   h1 {
     font-size: 1.4rem;
     margin: 20px 0;
+  }
+  .code-frame {
+    overflow: scroll;
+    background-color: #ffffff;
+    margin: 26px 0;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    border-radius: 8px;
   }
 }
 .head {
