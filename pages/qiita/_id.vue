@@ -14,7 +14,7 @@
       <h2 class="section-title">
         {{ qiitaItem.title }}
       </h2>
-      <article>
+      <article class="article">
         <div class="head">
           <a :href="qiitaItem.url" target="_blank">Qiitaのページに飛ぶ</a>
           <div>いいねの数：{{ qiitaItem.likes_count }}</div>
@@ -34,9 +34,7 @@ const API_PATH_BASE = 'https://qiita.com/api/v2/items/'
 export default {
   data () {
     return {
-      qiitaItem: '',
-      statusCode: '',
-      message: ''
+      statusCode: ''
     }
   },
   async asyncData ({ params }) {
@@ -53,8 +51,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-article {
+<style lang="scss" scoped>
+/deep/ .article {
   line-height: 1.3;
   p {
     margin-bottom: 10px;

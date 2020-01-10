@@ -32,12 +32,10 @@ const API_PATH = 'https://qiita.com/api/v2/users/szaizen/items'
 export default {
   data () {
     return {
-      qiitaItems: '',
-      statusCode: '',
-      message: ''
+      statusCode: ''
     }
   },
-  async asyncData ({ params }) {
+  async asyncData () {
     try {
       const { data } = await axios.get(API_PATH)
       return { qiitaItems: data }
