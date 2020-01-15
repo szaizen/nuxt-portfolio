@@ -14,7 +14,7 @@
       <h2 class="section-title">
         {{ qiitaItem.title }}
       </h2>
-      <article>
+      <article class="article">
         <div class="head">
           <a :href="qiitaItem.url" target="_blank">Qiitaのページに飛ぶ</a>
           <div>いいねの数：{{ qiitaItem.likes_count }}</div>
@@ -29,14 +29,20 @@
 
 <script>
 import axios from 'axios'
-const API_PATH_BASE = 'https://qiita.com/api/v2/items/'
+import ga from '~/assets/js/mixin/ga.js'
+
+const API_PATH_BASE = process.env.API_PATH_QIITA + 'items/'
 
 export default {
+  mixins: [ ga ],
+  head () {
+    return {
+      title: this.qiitaItem.title
+    }
+  },
   data () {
     return {
-      qiitaItem: '',
-      statusCode: '',
-      message: ''
+      statusCode: ''
     }
   },
   async asyncData ({ params }) {
@@ -53,8 +59,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-article {
+<style lang="scss" scoped>
+/deep/ .article {
   line-height: 1.3;
   p {
     margin-bottom: 10px;
@@ -65,6 +71,14 @@ article {
   h1 {
     font-size: 1.4rem;
     margin: 20px 0;
+  }
+  .code-frame {
+    overflow: scroll;
+    background-color: #ffffff;
+    margin: 26px 0;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    border-radius: 8px;
   }
 }
 .head {

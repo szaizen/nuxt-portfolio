@@ -57,9 +57,24 @@ export default {
 }
 .input input {
   width: 50%;
+  padding: 7px;
+  border-radius: 3px;
+  border: none;
 }
 .input textarea {
   width: 100%;
   height: 100px;
+  border: none;
+}
+input[type="submit"] {
+  padding: 10px 27px;
+  display: block;
+  border: none;
+  font-size: .8rem;
+  background-color: black;
+  color: #fff;
+}
+.title {
+  margin: 15px 0 5px;
 }
 </style>

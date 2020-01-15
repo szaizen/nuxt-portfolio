@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
 .overlay {
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
   height: 100%;
@@ -47,6 +47,7 @@ export default {
   transition: all .3s ease;
   opacity: 1;
   text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }
 .panel__title {
   font-size: 1.3rem;
@@ -54,7 +55,7 @@ export default {
   font-weight: bold;
 }
 .panel__image {
-  width: 100%;
+  width: 90%;
 }
 .panel__button {
   width: 200px;

@@ -2,15 +2,15 @@
   <header class="header">
     <div class="header-inner">
       <h1>
-        <nuxt-link to="/">
+        <nuxt-link to="/" class="gnav">
           my-portfolio
         </nuxt-link>
       </h1>
       <div>
-        <nuxt-link to="/qiita">
+        <nuxt-link to="/qiita" class="gnav">
           Qiita
         </nuxt-link>
-        <nuxt-link to="/about">
+        <nuxt-link to="/about" class="gnav">
           自己紹介
         </nuxt-link>
       </div>
@@ -35,4 +35,16 @@
       color: inherit;
     }
   }
+
+  .gnav {
+    margin-right: 15px;
+    transition: all 0.5s;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
 </style>

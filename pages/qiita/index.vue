@@ -27,17 +27,26 @@
 
 <script>
 import axios from 'axios'
+import ga from '~/assets/js/mixin/ga.js'
 
-const API_PATH = 'https://qiita.com/api/v2/users/szaizen/items'
+const API_PATH = process.env.API_PATH_QIITA + 'users/szaizen/items'
+
 export default {
-  data () {
+  mixins: [ ga ],
+  head () {
     return {
-      qiitaItems: '',
-      statusCode: '',
-      message: ''
+      title: 'Qiita記事一覧',
+      meta: [
+        { hid: 'description', name: 'description', content: 'ポートフォリオサイトのQiita記事一覧ページです。' }
+      ]
     }
   },
-  async asyncData ({ params }) {
+  data () {
+    return {
+      statusCode: ''
+    }
+  },
+  async asyncData () {
     try {
       const { data } = await axios.get(API_PATH)
       return { qiitaItems: data }
