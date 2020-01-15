@@ -9,7 +9,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { property: 'og:title', content: 'ポートフォリオサイト' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://stoic-heisenberg-040adc.netlify.com/' },
+      { property: 'og:image', content: 'https://stoic-heisenberg-040adc.netlify.com/ogp.png' },
+      { property: 'og:site_name', content: 'ポートフォリオサイト' },
+      { property: 'og:description', content: 'ポートフォリオサイト' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
