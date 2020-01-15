@@ -29,9 +29,12 @@
 
 <script>
 import axios from 'axios'
+import ga from '~/assets/js/mixin/ga.js'
+
 const API_PATH_BASE = process.env.API_PATH_QIITA + 'items/'
 
 export default {
+  mixins: [ ga ],
   head () {
     return {
       title: this.qiitaItem.title
@@ -45,7 +48,6 @@ export default {
   async asyncData ({ params }) {
     try {
       const { data } = await axios.get(API_PATH_BASE + params.id)
-      console.log(data)
       return { qiitaItem: data }
     } catch (err) {
       return {

@@ -27,11 +27,12 @@
 
 <script>
 import axios from 'axios'
+import ga from '~/assets/js/mixin/ga.js'
 
 const API_PATH = process.env.API_PATH_QIITA + 'users/szaizen/items'
-console.log(API_PATH)
 
 export default {
+  mixins: [ ga ],
   head () {
     return {
       title: 'Qiita記事一覧',

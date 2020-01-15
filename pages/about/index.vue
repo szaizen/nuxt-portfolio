@@ -31,10 +31,13 @@
 
 <script>
 import ArticleBody from '~/components/common/ArticleBody'
+import ga from '~/assets/js/mixin/ga.js'
+
 export default {
   components: {
     ArticleBody
   },
+  mixins: [ ga ],
   head () {
     return {
       title: '自己紹介',
